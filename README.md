@@ -8,7 +8,7 @@ This presents a collection of web components to integrate with the [FCCN's webap
 
 You can install this collection in your project using composer:
 ```
-composer require fccn/webapp-tools/web-components
+composer require fccn/webapp-tools-web-components
 
 ```
 
