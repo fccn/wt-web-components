@@ -11,15 +11,19 @@
     ],
     "require": {
         "php": ">=5.5.0",
-        "fccn/webapp-tools-common": "^1.0"
+        "fccn/webapp-tools-common": "^1.0",
+        "fccn/webapp-tools-translate": "^1.0"
     },
     "autoload":{
       "psr-4": {
-        "Fccn\\WebComponents\\": "app"
+        "Fccn\\Lib\\": "app/lib",
+        "Fccn\\WebComponents\\": "app/component"
       }
     },
     "require-dev": {
-        "codeception/codeception": "^2.3"
+        "codeception/codeception": "^2.3",
+        "slim/slim": "^3.9",
+        "herloct/codeception-slim-module": "^1.1"
     },
     "autoload-dev": {
         "psr-4": {
