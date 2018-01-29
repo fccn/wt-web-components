@@ -1,0 +1,36 @@
+{# Social Media Utilities #}
+
+{% macro twitter_head(app_name,title,description,domain) %}
+
+    <!-- Twitter card integration -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@{{site}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description }}">
+    <meta name="twitter:domain" content="{{domain}}">
+{% endmacro %}
+
+{% macro facebook_head(title,url,logo,description) %}
+
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{logo}}">
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:type" content="website" />
+
+{% endmacro %}
+
+{% macro google_analytics_script(analytics_id) %}
+
+  {% if analytics_id is defined %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{ analytics_id }}', 'auto');
+      ga('send', 'pageview');
+    </script>
+  {% endif %}
+
+{% endmacro %}
