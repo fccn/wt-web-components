@@ -12,7 +12,9 @@
     "require": {
         "php": ">=5.5.0",
         "fccn/webapp-tools-common": "^1.0",
-        "fccn/webapp-tools-translate": "^1.0"
+        "fccn/webapp-tools-translate": "^1.0",
+        "jswhetstone/twig-extension": "dev-master",
+        "twig/extensions": "^1.5"
     },
     "autoload":{
       "psr-4": {

@@ -30,8 +30,15 @@ $c = array(
 
 #---- External libraries loader --------------------
   "ext_libs_loader_service_name" => 'loader',
-  
+
   "ext_libs" => array(
     "my_lib" => __DIR__."/vendor/test/lib.js"
   ),
+
+#---- Slim Middleware loader --------------------
+
+  "slim_middlewares" => array(
+    "my_test_middleware" => new \Fccn\Tests\MyMiddleware(),
+   ),
+
 );
