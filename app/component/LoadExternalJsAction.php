@@ -28,7 +28,6 @@ class LoadExternalJsAction
     #loads javascript given a name
     public function __invoke(Request $request, Response $response, $args)
     {
-        \Fccn\Lib\FileLogger::debug("application container: ".print_r($this->container, true));
         $loader_srv_name = \Fccn\Lib\SiteConfig::getInstance()->get('ext_libs_loader_service_name');
         if (empty($this->container[$loader_srv_name])) {
             \Fccn\Lib\FileLogger::error("GET script/lib - no loader service found");
