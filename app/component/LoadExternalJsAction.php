@@ -24,16 +24,16 @@ class LoadExternalJsAction
     {
         $this->container = $container;
         $this->verbose_debug = SiteConfig::getInstance()->get("verbose_debug", false);
-        if($this->verbose_debug){
-          FileLogger::debug("LoadExternalJsAction - initialization");
+        if ($this->verbose_debug) {
+            FileLogger::debug("LoadExternalJsAction - initialization");
         }
     }
 
     #loads javascript given a name
     public function __invoke(Request $request, Response $response, $args)
     {
-        if($this->verbose_debug){
-          FileLogger::debug("LoadExternalJsAction - call to invoke with args: ".json_encode($args));
+        if ($this->verbose_debug) {
+            FileLogger::debug("LoadExternalJsAction - call to invoke with args: ".json_encode($args));
         }
         $loader_srv_name = \Fccn\Lib\SiteConfig::getInstance()->get('ext_libs_loader_service_name');
         if (empty($this->container[$loader_srv_name])) {
