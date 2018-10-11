@@ -33,7 +33,7 @@ class ExtLibsLoader
     {
         if (isset($this->libraries[$lib_name])) {
             $path = $this->libraries[$lib_name];
-            \Fccn\Lib\FileLogger::debug("ExtLibsLoader::exists there is a record for library [$lib_name], located in: $path");
+            #\Fccn\Lib\FileLogger::debug("ExtLibsLoader::exists there is a record for library [$lib_name], located in: $path");
             return file_exists($path);
         }
         return false;

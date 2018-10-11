@@ -18,16 +18,23 @@ use Fccn\Lib\Locale as Locale;
 class LoadExternalJsAction
 {
     protected $container;
+    protected $verbose_debug;
 
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
-        \Fccn\Lib\FileLogger::debug("LoadExternalJsAction - initialization");
+        $this->verbose_debug = SiteConfig::getInstance()->get("verbose_debug", false);
+        if($this->verbose_debug){
+          FileLogger::debug("LoadExternalJsAction - initialization");
+        }
     }
 
     #loads javascript given a name
     public function __invoke(Request $request, Response $response, $args)
     {
+        if($this->verbose_debug){
+          FileLogger::debug("LoadExternalJsAction - call to invoke with args: ".json_encode($args));
+        }
         $loader_srv_name = \Fccn\Lib\SiteConfig::getInstance()->get('ext_libs_loader_service_name');
         if (empty($this->container[$loader_srv_name])) {
             \Fccn\Lib\FileLogger::error("GET script/lib - no loader service found");
